@@ -4,6 +4,11 @@ function initCanvas(){
     var naveImage   = new Image(); // nave
     var enemiespic1  = new Image(); // enemigo 1
     var enemiespic2 = new Image(); // enemigo 2
+    var enemiespic3 = new Image(); // enemigo 3
+    var enemiespic4 = new Image(); // enemigo 4
+    var enemiespic5 = new Image(); // enemigo 5
+    var enemiespic6 = new Image(); // enemigo 6
+
 
     // backgroundImage y naveImage
   // backgroundImage.src = "images/background-pic.jpg"; //Background picture
@@ -11,6 +16,11 @@ function initCanvas(){
     // Enemigos fotos
     enemiespic1.src     = "images/enemigo1.png";
     enemiespic2.src     = "images/enemigo2.png"; //Enemies picture
+    enemiespic3.src     = "images/enemigo3.png";
+    enemiespic4.src     = "images/enemigo4.png";
+    enemiespic5.src     = "images/enemigo5.png";
+    enemiespic6.src     = "images/enemigo6.png";
+
     
     // width and height (canvas)
     var cW = ctx.canvas.width; // 700px 
@@ -36,75 +46,263 @@ function initCanvas(){
 
     // To reduce a repetitive function or two I've made some slight changes to how you create enemies.
     var enemies = [
-                   new enemyTemplate({id: "enemy1", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30}),
-                   new enemyTemplate({id: "enemy2", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy3", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy4", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy5", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy6", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy7", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy8", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy9", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy10", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy11", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy12", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy13", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy14", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy15", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy16", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy17", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy18", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy19", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy20", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy21", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy22", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy23", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy24", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy25", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy26", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy27", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy28", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy29", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy30", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy31", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy32", x:  aleatorio(0,350), y: aleatorio(-20,-2500), w: 50, h: 30 }),
-
+                   new enemyTemplate({id: "enemy1", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy2", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy3", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy4", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy5", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy6", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy7", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy8", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy9", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy10", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy11", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy12", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy13", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy14", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy15", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy16", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy17", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy18", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy19", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy20", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy21", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy22", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy23", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy24", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy25", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy26", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy27", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy28", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy29", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy30", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy31", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy32", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy33", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy34", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy35", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy36", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy14", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy15", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy16", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy17", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy18", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy19", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy20", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy21", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy22", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy23", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy24", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy25", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy26", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy27", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy28", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy29", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy30", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy31", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy32", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy33", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy34", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy35", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy36", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy14", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy15", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy16", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy17", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy18", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy19", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy20", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy21", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy22", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy23", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy24", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy25", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy26", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy27", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy28", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy29", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy30", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy31", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy32", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy33", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy34", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy35", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+                   new enemyTemplate({id: "enemy36", x:  aleatorio(0,350), y: aleatorio(-20,-10000), w: 55, h: 45 }),
+    
                    // Segundo grupo de enemigos
-                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy34", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy35", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy36", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy37", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy38", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy39", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy40", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy41", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy42", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy43", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy44", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy45", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy46", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy47", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy48", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy49", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy50", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy51", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy52", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy53", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy54", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy55", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy56", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy57", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy58", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy59", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy60", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy61", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy62", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy63", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy64", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy65", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy66", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
-                   new enemyTemplate({ id: "enemy67", x: aleatorio(0,350), y:  aleatorio(-20,-2500), w: 50, h: 30, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-20,-2000), w: 55, h: 45, image: enemiespic6 }),
+
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-2000,-4000), w: 55, h: 45, image: enemiespic6 }),
+
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-4000,-6000), w: 55, h: 45, image: enemiespic6 }),
+
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-6000,-8000), w: 55, h: 45, image: enemiespic6 }),
+
+
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic5 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic6 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic2 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic3 }),
+                   new enemyTemplate({ id: "enemy33", x: aleatorio(0,350), y:  aleatorio(-8000,-10000), w: 55, h: 45, image: enemiespic4 }),
 
                 ];
 
@@ -113,8 +311,8 @@ function initCanvas(){
     var renderEnemies = function (enemyList) {
         for (var i = 0; i < enemyList.length; i++) {
             console.log(enemyList[i]);
-            ctx.drawImage(enemyList[i].image, enemyList[i].x, enemyList[i].y += .5, enemyList[i].w, enemyList[i].h);
-            // Detects when ships hit lower level
+            ctx.drawImage(enemyList[i].image, enemyList[i].x, enemyList[i].y += .6, enemyList[i].w, enemyList[i].h);
+            // Detects when ships hit lower level     
             launcher.hitDetectLowerLevel(enemyList[i]);
         }
     }
@@ -143,7 +341,7 @@ function initCanvas(){
             over: false, 
             message: "",
             fillStyle: 'red',
-            font: 'italic bold 50px Arial, sans-serif',
+            font: 'italic bold 20px Arial, sans-serif',
         }
 
         this.render = function () {
@@ -173,7 +371,7 @@ function initCanvas(){
                 clearInterval(animateInterval); // Stop the game animation loop
                 ctx.fillStyle = 'Blue';
                 ctx.font = this.gameStatus.font;
-                ctx.fillText('Bravo Ganaste!!!!, ', cW * .5 - 150, 300);
+                ctx.fillText('Bravo Venciste a la corrupción!!!!, ', 40, 300);
             }
         }
 
@@ -225,7 +423,7 @@ function initCanvas(){
 
                 ctx.fillStyle = 'red';
                 ctx.font = this.gameStatus.font;
-                ctx.fillText('Perdiste!!, los dejaste pasar, ', 100, 300);
+                ctx.fillText('Perdiste!!, volvió la corrupción, ', 50, 300);
 
                 var ExploDir ="images/Explo.png";
                 ExploImg = new Image();
@@ -249,7 +447,7 @@ function initCanvas(){
 
                     ctx.fillStyle = 'red';
                     ctx.font = this.gameStatus.font;
-                    ctx.fillText('Perdiste!! algo te golpeó, ', 150, 300);
+                    ctx.fillText('Perdiste!! te golpeó la corrupción, ', 40, 300);
     
 
                     var ExploDir ="images/Explo.png";
