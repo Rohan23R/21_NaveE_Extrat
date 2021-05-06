@@ -28,6 +28,8 @@ body {
     cursor: pointer;
     border-radius: 8px;
     border:2px solid blue;
+    touch-action: manipulation;
+    
 }
 .boton:hover{
     background-color: white;
