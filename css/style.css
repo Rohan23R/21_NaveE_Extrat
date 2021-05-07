@@ -6,8 +6,11 @@ body {
 }
 
 .container {
-  width:800px;
+  width:400px;
   margin:0 auto;
+  border:1px solid;
+
+
 }
 
 .barra {
@@ -20,26 +23,58 @@ body {
   background-image: url("../images/nubes.jpg");
   /*  image-background: "images/background-pic1.jpg";*/*/
   border:#000 1px solid; 
+  width: 100%;
+  touch-action: manipulation;
+
+
+
 }
 .boton{
-    color:red;
+   /* color:red;*/
     font-size: 40px;
     /*background-color: #000000;*/
     cursor: pointer;
-    border-radius: 50px;
-    border:2px solid blue;
+    border-radius: 60px;
+    /*border:2px solid blue;*/
     touch-action: manipulation;
     width: 110px;
     height: 110px;
-    backface-visibility: hidden;    
+  /*  backface-visibility: hidden;
+  position: relative;*/    
+    /*position: absolute;*/
 
 }
 .boton:hover{
-    background-color: white;
-    color: #000000;
+    background-color:rgba(150, 50, 150, .2);
+    border-color: rgba(150, 150, 150, .3);
+   
+
 }
 
 #left_btn{
   background-image: url("../images/fIzquierda.png");
-  
+  background-color: transparent;
+  left: 0px;
+
 }
+
+#right_btn{
+  background-image: url("../images/fDerecha.png");
+  background-color: transparent;
+}
+
+#fire_btn{
+  background-image: url("../images/balin.png");
+  background-color: transparent;
+  margin-right: 40px;
+
+}
+
+#cajita1{
+  border: 5px solid;
+  padding: 5px;
+  border-color: red;
+  position:absolute;
+
+}
+
