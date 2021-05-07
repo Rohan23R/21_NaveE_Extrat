@@ -1,24 +1,26 @@
 body { 
   margin:00px;   
   /*background-image: url("../images/nubes.jpg");
-  background-size: cover; 
-*/
+  background-size: cover; */
+  touch-action: manipulation;
+
 }
 
 .container {
   width:400px;
   margin:0 auto;
   border:1px solid;
-
+  background-color: #46A9F5;
 
 }
-
+/*
 .barra {
   background-color:#000000;
   color: #ffffff;
   font-size: 20px;
   height: 20px; width: 700px;
 }
+*/
 #my_canvas{ 
   background-image: url("../images/nubes.jpg");
   /*  image-background: "images/background-pic1.jpg";*/*/
@@ -66,15 +68,8 @@ body {
 #fire_btn{
   background-image: url("../images/balin.png");
   background-color: transparent;
-  margin-right: 40px;
+  margin-right: 55px;
 
 }
 
-#cajita1{
-  border: 5px solid;
-  padding: 5px;
-  border-color: red;
-  position:absolute;
-
-}
 
