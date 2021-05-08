@@ -44,25 +44,30 @@ body {
   /*  backface-visibility: hidden;
   position: relative;*/    
     /*position: absolute;*/
+    cursor: pointer;
+
 
 }
+/*
 .boton:hover{
     background-color:rgba(150, 50, 150, .2);
     border-color: rgba(150, 150, 150, .3);
    
 
-}
+}*/
 
 #left_btn{
   background-image: url("../images/fIzquierda.png");
   background-color: transparent;
   left: 0px;
+  z-index: 99;
 
 }
 
 #right_btn{
   background-image: url("../images/fDerecha.png");
   background-color: transparent;
+  z-index: 100;
 }
 
 #fire_btn{

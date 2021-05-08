@@ -310,7 +310,7 @@ function initCanvas(){
     // This also forces enemies to check if THEY are hitting the player 
     var renderEnemies = function (enemyList) {
         for (var i = 0; i < enemyList.length; i++) {
-            console.log(enemyList[i]);
+           // console.log(enemyList[i]);
             ctx.drawImage(enemyList[i].image, enemyList[i].x, enemyList[i].y += .6, enemyList[i].w, enemyList[i].h);
             // Detects when ships hit lower level     
             launcher.hitDetectLowerLevel(enemyList[i]);
@@ -347,8 +347,11 @@ function initCanvas(){
         this.render = function () {
             if(this.direccion === 'left'){
                 this.x-=3.5;
+                console.log("la I")
             } else if(this.direccion === 'right'){
                 this.x+=3.5;
+                console.log("la D")
+
             }else if(this.direccion === "downArrow"){
                 this.y+=3.5;
             }else if(this.direccion === "upArrow"){
@@ -388,7 +391,7 @@ function initCanvas(){
             ExploImg.src = ExploDir;
 
 
-            console.log('crush');
+           // console.log('crush');
             for (var i = 0; i < enemies.length; i++) {
                 var e = enemies[i];
                 if(m.x+m.w >= e.x && 
@@ -399,7 +402,7 @@ function initCanvas(){
                     
                     this.misiles.splice(this.misiles[mi],1); // Remove the missile
                     enemies.splice(i, 1); // Remove the enemy that the missile hit
-                    document.querySelector('.barra').innerHTML = "Destruiste "+ e.id+ " ";
+//                    document.querySelector('.barra').innerHTML = "Destruiste "+ e.id+ " ";
                     
                     ctx.drawImage(ExploImg1, e.x+25, e.y+25);
 
@@ -423,7 +426,7 @@ function initCanvas(){
 
                 ctx.fillStyle = 'red';
                 ctx.font = this.gameStatus.font;
-                ctx.fillText('Perdiste!!, volvió la corrupción, ', 50, 300);
+                ctx.fillText('Perdimos. Un corrupto logró pasar!!!, ', 50, 300);
 
                 var ExploDir ="images/Explo.png";
                 ExploImg = new Image();
@@ -436,7 +439,7 @@ function initCanvas(){
             // this.y -> where is spaceship location
             if(enemy.id === 'enemy3'){
                 //console.log(this.y);
-                console.log(this.x);
+               // console.log(this.x);
             }
             // a) If enemy y is greater than this.y - 25 => then we know there's a collision
             // b) If enemy x is gless than this.x + 45 && enemy x > this.x - 45 then we know theres a collision
@@ -447,7 +450,7 @@ function initCanvas(){
 
                     ctx.fillStyle = 'red';
                     ctx.font = this.gameStatus.font;
-                    ctx.fillText('Perdiste!! te golpeó la corrupción, ', 40, 300);
+                    ctx.fillText('Perdimos!! un corruto te golpeó, ', 40, 300);
     
 
                     var ExploDir ="images/Explo.png";
@@ -485,9 +488,13 @@ function initCanvas(){
     var fire_btn  = document.getElementById('fire_btn'); 
 
    document.addEventListener('keydown', function(event) {
+ 
         if(event.keyCode == 37) // left arrow
+ 
         {
-         launcher.direccion = 'left';  
+            console.log("tecla izquierd  ")
+
+            launcher.direccion = 'left';  
             if(launcher.x < cW*.2-130){
                 launcher.x+=0;
                 launcher.direccion = '';
@@ -504,9 +511,11 @@ function initCanvas(){
     }); 
 
     document.addEventListener('keydown', function(event) {
-        if(event.keyCode == 39) // right arrow
+        if(event.keyCode == 39) //   right arrow
         {
-         launcher.direccion = 'right';
+            console.log("tecla derecha")
+
+            launcher.direccion = 'right';
          if(launcher.x > cW-110){
             launcher.x-=0;
             launcher.direccion = '';
@@ -569,22 +578,43 @@ function initCanvas(){
 
     // control buttons
     left_btn.addEventListener('mousedown', function(event) {
+      console.log("hola i");
         launcher.direccion = 'left';
     });
+
+
+
+    left_btn.addEventListener('touchstart', function(event) {
+        console.log("toque izq");
+          launcher.direccion = 'left';
+      });
+  
+
 
     left_btn.addEventListener('mouseup', function(event) {
         launcher.direccion = '';
     });
 
+    
     right_btn.addEventListener('mousedown', function(event) {
+     console.log("hola D");
         launcher.direccion = 'right';
     });
+
+
+    right_btn.addEventListener('touchstart', function(event) {
+        console.log("toque Der");
+           launcher.direccion = 'right';
+       });
+   
+
 
     right_btn.addEventListener('mouseup', function(event) {
         launcher.direccion = '';
     });
     //This code below fires bullets (balas)
     fire_btn.addEventListener('mousedown', function(event) {
+        console.log("hola Bala");
         launcher.misiles.push({x: launcher.x + launcher.w*.5, y: launcher.y, w: 3, h: 10});
     });
     // This fires when clicking on space button from keyboard
@@ -595,6 +625,8 @@ function initCanvas(){
     });
 }
 
+
 window.addEventListener('load', function(event) {
     initCanvas();
+
 });
