@@ -8,9 +8,16 @@ body {
 
 .container {
   width:400px;
+//*  height:100%;*/
   margin:0 auto;
   border:1px solid;
   background-color: #46A9F5;
+  touch-action: manipulation;
+  left:0px;
+  top:0px;
+  border-color: red;
+  position: absolute;
+
 
 }
 /*

@@ -347,10 +347,10 @@ function initCanvas(){
         this.render = function () {
             if(this.direccion === 'left'){
                 this.x-=3.5;
-                console.log("la I")
+               // console.log("la I")
             } else if(this.direccion === 'right'){
                 this.x+=3.5;
-                console.log("la D")
+               // console.log("la D")
 
             }else if(this.direccion === "downArrow"){
                 this.y+=3.5;
@@ -492,7 +492,7 @@ function initCanvas(){
         if(event.keyCode == 37) // left arrow
  
         {
-            console.log("tecla izquierd  ")
+           // console.log("tecla izquierd  ")
 
             launcher.direccion = 'left';  
             if(launcher.x < cW*.2-130){
@@ -513,7 +513,7 @@ function initCanvas(){
     document.addEventListener('keydown', function(event) {
         if(event.keyCode == 39) //   right arrow
         {
-            console.log("tecla derecha")
+          //  console.log("tecla derecha")
 
             launcher.direccion = 'right';
          if(launcher.x > cW-110){
@@ -578,14 +578,14 @@ function initCanvas(){
 
     // control buttons
     left_btn.addEventListener('mousedown', function(event) {
-      console.log("hola i");
+     // console.log("hola i");
         launcher.direccion = 'left';
     });
 
 
 
-    left_btn.addEventListener('touchstart', function(event) {
-        console.log("toque izq");
+    left_btn.addEventListener('touchmove', function(event) {
+      //  console.log("toque izq");
           launcher.direccion = 'left';
       });
   
@@ -597,13 +597,13 @@ function initCanvas(){
 
     
     right_btn.addEventListener('mousedown', function(event) {
-     console.log("hola D");
+    // console.log("hola D");
         launcher.direccion = 'right';
     });
 
 
-    right_btn.addEventListener('touchstart', function(event) {
-        console.log("toque Der");
+    right_btn.addEventListener('touchmove', function(event) {
+      //  console.log("toque Der");
            launcher.direccion = 'right';
        });
    
@@ -614,9 +614,18 @@ function initCanvas(){
     });
     //This code below fires bullets (balas)
     fire_btn.addEventListener('mousedown', function(event) {
-        console.log("hola Bala");
+       // console.log("hola Bala");
         launcher.misiles.push({x: launcher.x + launcher.w*.5, y: launcher.y, w: 3, h: 10});
     });
+
+    fire_btn.addEventListener('touchstart', function(event) {
+       // console.log("toque bala");
+        launcher.misiles.push({x: launcher.x + launcher.w*.5, y: launcher.y, w: 3, h: 10});
+    });
+
+
+
+
     // This fires when clicking on space button from keyboard
     document.addEventListener('keydown', function(event) {
         if(event.keyCode == 32) {
