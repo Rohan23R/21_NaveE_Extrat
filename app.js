@@ -346,10 +346,20 @@ function initCanvas(){
 
         this.render = function () {
             if(this.direccion === 'left'){
-                this.x-=3.5;
+                if ( this.x > -40){
+                    this.x-=3.5;
+                    
+ 
+                }                
+ 
+
+
                // console.log("la I")
             } else if(this.direccion === 'right'){
-                this.x+=3.5;
+                if ( this.x < 350){
+                    this.x+=3.5;
+                    
+                }
                // console.log("la D")
 
             }else if(this.direccion === "downArrow"){
@@ -495,10 +505,6 @@ function initCanvas(){
            // console.log("tecla izquierd  ")
 
             launcher.direccion = 'left';  
-            if(launcher.x < cW*.2-130){
-                launcher.x+=0;
-                launcher.direccion = '';
-            }
        }    
     });
 
@@ -516,10 +522,6 @@ function initCanvas(){
           //  console.log("tecla derecha")
 
             launcher.direccion = 'right';
-         if(launcher.x > cW-110){
-            launcher.x-=0;
-            launcher.direccion = '';
-         }
         
         }
     });
@@ -584,7 +586,7 @@ function initCanvas(){
 
 
 
-    left_btn.addEventListener('touchmove', function(event) {
+    left_btn.addEventListener('touchstart', function(event) {
       //  console.log("toque izq");
           launcher.direccion = 'left';
       });
@@ -602,7 +604,7 @@ function initCanvas(){
     });
 
 
-    right_btn.addEventListener('touchmove', function(event) {
+    right_btn.addEventListener('touchstart', function(event) {
       //  console.log("toque Der");
            launcher.direccion = 'right';
        });
