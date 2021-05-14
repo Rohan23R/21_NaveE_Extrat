@@ -328,7 +328,7 @@ function initCanvas(){
 
     function Launcher(){
         // bullet location (ubicación de balas)
-        this.y = 500, 
+        this.y = 800, 
         this.x = cW*.5-25, 
         this.w = 100, 
         this.h = 100,   
