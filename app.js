@@ -347,7 +347,7 @@ function initCanvas(){
         this.render = function () {
             if(this.direccion === 'left'){
                 if ( this.x > -40){
-                    this.x-=3.5;
+                    this.x-=2;
                     
  
                 }                
@@ -357,7 +357,7 @@ function initCanvas(){
                // console.log("la I")
             } else if(this.direccion === 'right'){
                 if ( this.x < 350){
-                    this.x+=3.5;
+                    this.x+=2;
                     
                 }
                // console.log("la D")
